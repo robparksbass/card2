@@ -43,3 +43,6 @@ Route::get('/footer', function () {
 Route::get('/header', function () {
     return view('header');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

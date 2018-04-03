@@ -4,4 +4,3 @@
     <li><a href="/add">Add</a></li>
     <li><a href="/businesses">Businesses</a></li>
 </ul>
-
