@@ -13,6 +13,7 @@ body {
 h1 {
     text-align: center;
     font-family: "midnight_bangkokregular";
+    margin: 0 auto;
 }
 /*main nav*/
 .mainNav {
@@ -62,10 +63,11 @@ main {
     background: #000;
     color: #FFF;
 }
-.navbar {
+.navbarBottom {
     list-style-type: none;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     margin: auto;
 }
@@ -74,4 +76,9 @@ main {
 }
 .pageFooter ul li a {
     color: #FFF;
+}
+
+.row {
+    position: relative;
+    top: 75px;
 }

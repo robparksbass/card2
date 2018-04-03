@@ -13,9 +13,8 @@ class BusinessesController extends Controller
         return view('businesses.index', compact('businesses'));
     }
 
-    public function show($id)
+    public function show(Business $business)
     {
-        $business = Business::find($id);
         return view('businesses.show', compact('business'));
     }
 }
