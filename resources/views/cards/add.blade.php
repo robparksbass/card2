@@ -10,9 +10,9 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Example select</label>
                 <select class="form-control" id="exampleFormControlSelect1">
-                    @foreach ($businesses as $business)
+                    @foreach ($card->business->id)
                         <option>                  
-                                {{ $business->business_name }}
+                            {{ $card->business->business_name }}
                         </option>
                     @endforeach
                 </select>
