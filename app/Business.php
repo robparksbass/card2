@@ -10,6 +10,6 @@ class Business extends Model
         return $this->hasOne('Hour::class', 'business_id', 'id');
     }
     public function cards(){
-        return $this->hasMany('Card::class', 'business_id', 'id');
+        return $this->belongsToMany('Card::class', 'business_id', 'id');
     }
 }
