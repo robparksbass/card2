@@ -1,7 +1,10 @@
-@extends('layouts.default')
+@extends('layouts.app')
 @section('content')
 <main class="row">
     <div class="col-12">
+        @guest
+        You must be logged in to access this feature
+        @else
         <form action="#" method="post">
             <div class="form-group">
                 <label for="businessName">Business Name</label>
@@ -27,28 +30,10 @@
                 <label for="businessWebsite">Business Website</label>
                 <input type="text" class="form-control" id="businessWebsite" placeholder="Enter Businesss Website">
             </div>
-            
-<!--            Upload image prompts:-->
-<!--
-            <div class="form-group">
-               Upload the Front of Card Image(Coming Soon)
-                <label class="custom-file">
-                    <input type="file" id="file1" class="custom-file-input" disabled>
-                    <span class="custom-file-control"></span>
-                </label>
-            </div>
-            
-            <div class="form-group">
-                Upload the Back of Card Image(Coming Soon)
-                <label class="custom-file">
-                    <input type="file" id="file2" class="custom-file-input" disabled>
-                    <span class="custom-file-control"></span>
-                </label>
-            </div>            
--->
 
             <button type="submit" class="btn btn-success">Add Card</button>
         </form>
+        @endguest
     </div>
 </main>
-@stop
+@endsection

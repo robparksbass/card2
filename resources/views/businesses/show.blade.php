@@ -9,4 +9,4 @@
             <p><a href="/businesses">Back to Businesses</a></p>
         </div>
     </div>
-@stop
+@endsection

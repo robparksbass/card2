@@ -17,9 +17,18 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
+                
+                @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Asheville Membership Briefcase
                 </a>
+                @else
+                <a class="navbar-brand" href="{{ url('home') }}">
+                    Asheville Membership Briefcase
+                </a>
+                @endguest
+
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -43,11 +52,28 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{ route('home') }}">
+                                        Briefcase Portal
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('cards') }}">
+                                        Cards
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('add') }}">
+                                        Add a Card
+                                    </a>                                                                        
+                                    <a class="dropdown-item" href="{{ route('businesses') }}">
+                                        Businesses
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
+
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
