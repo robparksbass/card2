@@ -3,34 +3,20 @@
 <main class="row">
     <div class="col-12">
         @guest
-        You must be logged in to access this feature
+        You must be logged in to access this feature<br>
+        <a href="login">Login Now</a>
         @else
         <form action="#" method="post">
             <div class="form-group">
-                <label for="businessName">Business Name</label>
-                <input type="text" class="form-control" id="businessName" aria-describedby="nameHelp" placeholder="Enter Business Name">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    @foreach ($businesses as $business)
+                        <option>                  
+                                {{ $business->business_name }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
-
-            <div class="form-group">
-                <label for="businessAddress">Business Address</label>
-                <input type="text" class="form-control" id="businessAddress" placeholder="Enter Business Address">
-            </div>
-
-            <div class="form-group">
-                <label for="businessHours">Business Hours</label>
-                <input type="text" class="form-control" id="businessHours" placeholder="Enter Business Hours">
-            </div>
-
-            <div class="form-group">
-                <label for="businessPhone">Business Phone</label>
-                <input type="text" class="form-control" id="businessPhone" placeholder="Enter Business Phone">
-            </div>
-
-            <div class="form-group">
-                <label for="businessWebsite">Business Website</label>
-                <input type="text" class="form-control" id="businessWebsite" placeholder="Enter Businesss Website">
-            </div>
-
             <button type="submit" class="btn btn-success">Add Card</button>
         </form>
         @endguest
