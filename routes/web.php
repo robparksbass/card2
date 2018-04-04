@@ -32,7 +32,7 @@ Route::get('/cards', 'CardsController@index')->name('cards');
 
 Route::get('/cards/{card}', 'CardsController@show');
 
-Route::get('/cards/add', 'CardsController@add')->name('add');
+Route::get('add', 'CardsController@add')->name('add');
 
 // Route::get('/footer', function () {
 //     return view('footer');

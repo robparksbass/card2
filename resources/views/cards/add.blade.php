@@ -2,6 +2,9 @@
 @section('content')
 <main class="row">
     <div class="col-12">
+        @guest
+        You must be logged in to access this feature
+        @else
         <form action="#" method="post">
             <div class="form-group">
                 <label for="businessName">Business Name</label>
@@ -30,6 +33,7 @@
 
             <button type="submit" class="btn btn-success">Add Card</button>
         </form>
+        @endguest
     </div>
 </main>
 @endsection

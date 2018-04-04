@@ -16,9 +16,9 @@
                     <a href="login">Sign In to your Account</a><br>
                     <a href="register">Register for a New Account</a>
                     @else
-                    <a href="cards">View your cards</a><br>
-                    <a href="add">Add a New Card</a><br>
-                    <a href="businesses">View participating businesses</a>
+                    <a href="{{ route('cards') }}">View your cards</a><br>
+                    <a href="{{ route('add') }}">Add a New Card</a><br>
+                    <a href="{{ route('businesses') }}">View participating businesses</a>
                     @endguest
                 </div>
             </div>
