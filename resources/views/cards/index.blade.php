@@ -8,7 +8,7 @@
                     @if ( $card->user_id == Auth::user()->id  )
                         <li>
                             <a href="/cards/{{ $card->id }}">
-                                {{ $card->id }}
+                                {{ $business->business_name }}
                             </a>
                         </li>
                     @endif
