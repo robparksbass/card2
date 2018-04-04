@@ -1,7 +1,8 @@
-@extends('layouts.default')
+@extends('layouts.app')
 @section('content')
     <main class="row">
         <div class="col-12 businesses">
+            <h1>Businesses</h1>
             <ul>
                 @foreach ($businesses as $business)
                     <li>
@@ -13,4 +14,4 @@
             </ul>
         </div>
     </main>
-@stop
+@endsection
