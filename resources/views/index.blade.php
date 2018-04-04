@@ -1,19 +1,32 @@
 
 @extends('layouts.app')
 @section('content')
-<!-- <nav class="row">
-    <div class="col-12">
-        <ul class="mainNav">
-            <li><a href="cards" class="btn btn-dark">Cards</a></li>
-            <li><a href="businesses" class="btn btn-dark">Businesses</a></li>
-            <li><a href="about" class="btn btn-primary">About</a></li>
-            <li><a href="add"><img src="img/add-btn.png" alt="Add a new Card" class="addBtn"></a></li>
-        </ul>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                @guest
+                <div class="card-header">Welcome to the Asheville Membership Briefcase</div>
+                @else
+                <div class="card-header">Welcome to your Briefcase Portal, {{ Auth::user()->name }}!</div>
+                @endguest
+                <div class="card-body">
+                    @guest
+                    <a href="businesses">View participating businesses</a><br>
+                    <a href="login">Sign In to your Account</a><br>
+                    <a href="register">Register for a New Account</a>
+                    @else
+                    <a href="cards">View your cards</a><br>
+                    <a href="add">Add a New Card</a><br>
+                    <a href="businesses">View participating businesses</a>
+                    @endguest
+                </div>
+            </div>
+        </div>
     </div>
-</nav> -->
-
-<h1>Asheville Membership Briefcase.</h1>
-<a href="businesses">View participating businesses</a><br>
-<a href="login">Sign In to your Account</a><br>
-<a href="register">Register for a New Account</a><br>
+</div>
 @endsection
+
+
+
+

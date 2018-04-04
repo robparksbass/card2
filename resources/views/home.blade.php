@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Welcome to your Briefcase Portal, {{ Auth::user()->name }}!</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <a href="cards">View your cards</a><br>
+                    <a href="add">Add a New Card</a><br>
+                    <a href="businesses">View participating businesses</a>
 
-                    You are logged in!
                 </div>
             </div>
         </div>

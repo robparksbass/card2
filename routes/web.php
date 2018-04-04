@@ -24,25 +24,24 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/add', function () {
-    return view('add');
-});
-
-Route::get('/businesses', 'BusinessesController@index');
+Route::get('/businesses', 'BusinessesController@index')->name('businesses');
 
 Route::get('/businesses/{business}', 'BusinessesController@show');
 
-Route::get('/cards', function () {
-    return view('cards');
-});
+Route::get('/cards', 'CardsController@index')->name('cards');
 
-Route::get('/footer', function () {
-    return view('footer');
-});
+Route::get('/cards/{card}', 'CardsController@show');
 
-Route::get('/header', function () {
-    return view('header');
-});
+Route::get('/cards/add', 'CardsController@add')->name('add');
+
+// Route::get('/footer', function () {
+//     return view('footer');
+// });
+
+// Route::get('/header', function () {
+//     return view('header');
+// });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
