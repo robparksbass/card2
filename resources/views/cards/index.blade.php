@@ -13,6 +13,7 @@
                         </li>
                     @endif
                 @endforeach
+                <p><a href="home">Back to Portal</a></p>
             </ul>
         </div>
     </main>

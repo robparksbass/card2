@@ -12,6 +12,7 @@
                     </li>
                 @endforeach
             </ul>
+            <a href="home">Back to Portal</a>
         </div>
     </main>
 @endsection
