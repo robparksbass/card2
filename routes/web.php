@@ -24,6 +24,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/formAction', function () {
+    return view('formAction');
+});
+
 Route::get('/businesses', 'BusinessesController@index')->name('businesses');
 
 Route::get('/businesses/{business}', 'BusinessesController@show');
@@ -33,6 +37,9 @@ Route::get('/cards', 'CardsController@index')->name('cards');
 Route::get('/cards/{card}', 'CardsController@show');
 
 Route::get('add', 'CardsController@add')->name('add');
+
+
+
 
 // Route::get('/footer', function () {
 //     return view('footer');

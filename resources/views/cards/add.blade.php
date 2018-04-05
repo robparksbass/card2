@@ -6,10 +6,10 @@
         You must be logged in to access this feature<br>
         <a href="login">Login Now</a>
         @else
-        <form action="#" method="post">
+        <form action="/formAction" method="get">
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Example select</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <label for="businessSelect">Which business would you like to add a card for?</label>
+                <select class="form-control" id="businessSelect">
                     @foreach ( $businesses as $business )
                         <option value="{{$business->id}}">
                             {{ $business->business_name }}
