@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CardsTableSeeder::class);
         $this->call(HoursTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(LaratrustSeeder::class);
     }
 }
