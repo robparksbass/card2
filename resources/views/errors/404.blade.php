@@ -1,5 +1,14 @@
-@extends ('layouts.app')
+@extends('layouts.app')
 @section('content')
-    AMB's apologies, but this is not a valid page.<br>
-    <a href="home">Back to Portal</a>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    AMB's apologies, but this is not a valid page.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

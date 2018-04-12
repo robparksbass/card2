@@ -1,3 +1,5 @@
+// Bulma 
+// @import "node_modules/bulma/bulma";
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
@@ -8,9 +10,35 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome";
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-@import "manage";
+body {
+  background-color: #c1c1c1;
+}
+
+// Management Portal Styles
+.side-menu {
+  position: fixed;
+  height: 100vh;
+  width: 200px;
+  background-color:#fff;
+  overflow-y: scroll;
+}
+.side-menu aside ul {
+  list-style: none;
+}
+.management-area {
+  position:absolute;
+  top: 4rem;
+  left: 200px;
+  right: 0;
+}
+.flex-container {
+  margin: 10px 25px;
+}
