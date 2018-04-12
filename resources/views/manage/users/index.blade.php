@@ -1,5 +1,5 @@
 @extends('layouts.manage')
-@include('includes.nav.manage')
+
 
 @section('content')
 <div class="flex-container">

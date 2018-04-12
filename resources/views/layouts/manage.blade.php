@@ -16,6 +16,7 @@
         
 </head>
 <body>
+@include('includes.nav.manage')
     <div id="app">
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -90,8 +91,9 @@
              
                   
 
-        @include('includes.nav.manage')
+        
         <div class="management-area" id="app">
+
             @yield('content')
         </div>
     </div>
