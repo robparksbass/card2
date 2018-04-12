@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -51,7 +52,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                                     <a class="dropdown-item" href="{{ route('home') }}">
                                         Briefcase Portal

@@ -1,8 +1,15 @@
+
+
+
 @extends('layouts.app')
 @section('content')
-<main class="row">
-    <div class="col-12">
-        @guest
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Add a Card</div>
+                <div class="card-body">
+                @guest
         You must be logged in to access this feature<br>
         <a href="login">Login Now</a>
         @else
@@ -20,6 +27,10 @@
             <button type="submit" class="btn btn-success">Add Card</button>
         </form>
         @endguest
+
+                </div>
+            </div>
+        </div>
     </div>
-</main>
+</div>
 @endsection
