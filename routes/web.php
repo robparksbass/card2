@@ -11,11 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     $businesses = App\Business::all();
-//     return view('capstone', compact('businesses'));
-// });
-
 Route::get('/', function () {
     return view('index');
 });
@@ -38,20 +33,13 @@ Route::get('/cards/{card}', 'CardsController@show');
 
 Route::get('add', 'CardsController@add')->name('add');
 
+Route::post('/cards', 'CardsController@store');
 
-
-
-// Route::get('/footer', function () {
-//     return view('footer');
-// });
-
-// Route::get('/header', function () {
-//     return view('header');
-// });
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::prefix('manage')->middleware('role:superadministrator|administrator')->group(function(){
+Route::prefix('manage')->middleware('role:administrator')->group(function(){
     Route::get('/', 'ManageController@index');
     Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
     Route::resource('/users', 'UserController');
@@ -62,4 +50,3 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator')->gr
 
 });
 
-Route::get('/home', 'HomeController@index')->name('home');

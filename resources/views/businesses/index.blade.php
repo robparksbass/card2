@@ -7,22 +7,42 @@
                 <div class="card-header">Businesses</div>
 
                 <div class="card-body">
-                <ul>
-                @foreach ($businesses as $business)
-                    <li>
-                        <a href="/businesses/{{ $business->id }}">
-                            {{ $business->business_name }}
-                        </a>
-                    </li>
-                @endforeach
-                </ul>
+                View business details for:
+                    <ul>
+                        @foreach ($businesses as $business)
+                            <li>
+                                <a href="/businesses/{{ $business->id }}">
+                                    <button type="button" class="btn btn-outline-dark mb-1">
+                                    <i class="fa fa-building"></i>
+                                        {{ $business->business_name }}
+                                    </button>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                 @guest
-                Create an account or login to access the full features.<br>
-                <a href="/">Back to Home</a>
+                    <div class="row justify-content-center"> You must 
+                        <a href="{{ route('register') }}">&nbsp;create an account&nbsp;</a>or
+                        <a href="{{ route('login') }}">&nbsp;login</a>&nbsp;to access the full features.<br>
+                    </div>
+                    <div class="row justify-content-center">
+                        <a href="/">
+                            <button type="button" class="btn btn-primary btn-sm mt-2">
+                                <i class="fa fa-angle-double-left"></i>        
+                                Back to Home
+                            </button>
+                        </a>
+                    </div>    
                 @else
-                <a href="home">Back to Portal</a>
+                    <div class="row justify-content-center">
+                        <a href="{{ route('home') }}">
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-angle-double-left"></i>        
+                                Back to Portal
+                            </button>
+                        </a>
+                    </div>    
                 @endguest
-
                 </div>
             </div>
         </div>

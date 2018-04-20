@@ -14,6 +14,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    @role('administrator')
+    @include('includes.nav.manage')
+    @endrole
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -48,30 +51,41 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    @role('administrator')Administrator:@endrole
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
+                                    @role('administrator')
+                                    <a class="dropdown-item" href="{{ route('manage.dashboard') }}">
+                                        <i class="fa fa-cog"></i>
+                                        &nbsp;Manage
+                                    </a>
+                                    @endrole
                                     <a class="dropdown-item" href="{{ route('home') }}">
-                                        Briefcase Portal
+                                        <i class="fa fa-briefcase"></i>    
+                                        &nbsp;Briefcase Portal
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('cards') }}">
-                                        Cards
+                                        <i class="fa fa-address-card"></i>    
+                                        &nbsp;Cards
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('add') }}">
-                                        Add a Card
+                                        <i class="fa fa-plus-square"></i>
+                                        &nbsp;Add a Card
                                     </a>                                                                        
-                                    <a class="dropdown-item" href="{{ route('businesses') }}">
-                                        Businesses
+                                    <a class="dropdown-item" href="{{ route('businesses') }}">                                        
+                                        <i class="fa fa-building"></i>
+                                        &nbsp;Businesses
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        Logout
+                                        <i class="fa fa-times-circle"></i>
+                                        &nbsp;Logout
                                     </a>
 
 

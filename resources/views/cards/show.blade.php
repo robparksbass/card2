@@ -10,7 +10,22 @@
                 <div class="card-body">
                     Valid on: {{ $card->valid_date }}<br>
                     Expires on: {{ $card->expiration_date }}<br>
-                    <p><a href="/cards">Back to Cards</a></p>
+                    <div class="row justify-content-center">
+                        <a href="/cards">
+                            <button type="button" class="btn btn-success btn-sm mt-2">
+                                <i class="fa fa-angle-double-left"></i>
+                                Back to Cards
+                            </button>
+                        </a>
+                    </div>    
+                    <div class="row justify-content-center">
+                        <a href="{{ route('home') }}">
+                            <button type="button" class="btn btn-primary btn-sm mt-2">
+                                <i class="fa fa-angle-double-left"></i>
+                                Back to Portal
+                            </button>
+                        </a>
+                    </div>    
                 </div>
             </div>
         </div>

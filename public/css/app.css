@@ -13059,12 +13059,36 @@ body {
   background-color: #c1c1c1;
 }
 
+ul {
+  list-style-type: none;
+}
+
+.navbar-brand {
+  padding: 0 10px 0 10px;
+}
+
+.navbar-brand:hover {
+  background-color: #c1c1c1;
+  border-radius: 5px;
+}
+
+.card-header {
+  background-color: #2d6ecf;
+  color: #fff;
+}
+
 .side-menu {
   position: fixed;
   height: 100vh;
   width: 200px;
-  background-color: #fff;
+  background-color: #2d6ecf;
   overflow-y: scroll;
+  padding-top: 75px;
+  color: #fff;
+}
+
+.side-menu a {
+  color: #fff;
 }
 
 .side-menu aside ul {
@@ -13073,7 +13097,7 @@ body {
 
 .management-area {
   position: absolute;
-  top: 4rem;
+  top: 8rem;
   left: 200px;
   right: 0;
 }

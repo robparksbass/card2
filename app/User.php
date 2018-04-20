@@ -11,7 +11,9 @@ use Laratrust\Traits\LaratrustUserTrait;
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
-    use Notifiable;
+    // use Notifiable;
+
+
 
     /**
      * The attributes that are mass assignable.
@@ -32,6 +34,6 @@ class User extends Authenticatable
     ];
 
     public function cards(){
-        return $this->hasMany('Card::class', 'user_id', 'id');
+        return $this->hasMany('App\Card', 'user_id', 'id');
     }
 }
