@@ -36,15 +36,10 @@
                                 </label>
                                 <select class="form-control" id="businessSelect" name="businessSelect">
                                     @foreach ($businesses as $business)
-                                        @foreach ($cards as $card)
-                                            @if ($card->business_id == $business->id)
-                                                @return 
-                                            @endif
-                                        @endforeach
-                                            <option value="{{$business->id}}">
-                                                {{ $business->business_name }}
-                                            </option>
-                                        @endforeach
+                                        <option value="{{$business->id}}">
+                                            {{ $business->business_name }}
+                                        </option>
+                                    @endforeach
                                 </select>
                                 <!-- <label for="issueDate">When was your card issued?</label><br>
                                 <input type="text" name="issueDate" placeholder="Please enter the issue date"> -->

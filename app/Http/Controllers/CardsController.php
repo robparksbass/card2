@@ -23,11 +23,15 @@ class CardsController extends Controller
     
     public function add(Card $card)
     {
-        $businesses = Business::all();
         $user = Auth::user();
-        $cards = Card::all();
+
+        // Use the user's ID to fetch the cards we have, and get an array of their business IDs from the cards table
+        $business_ids = Card::where( 'user_id', $user->id )->pluck('business_id')->toArray();
+
+        // We only want Businesses for cards we don't have. Exclude the businesses we just retrieved (cards we already have)
+        $businesses = Business::whereNotIn( 'id', $business_ids )->get();
             
-        return view('cards.add', ['user' => $user, 'cards' => $card, 'businesses' => $businesses]);
+        return view('cards.add', ['user' => $user, 'businesses' => $businesses]);
     }
     public function store()
     {
