@@ -26,6 +26,7 @@
                 <div class="row justify-content-center">
                     <a href="/">
                         <button type="button" class="btn btn-primary btn-sm mt-1">
+                            <i class="fa fa-angle-double-left"></i>
                             Back to Home
                         </button>
                     </a>

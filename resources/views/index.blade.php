@@ -12,7 +12,7 @@
                 @endguest
                 <div class="card-body">
                     @guest
-                    <p>Welcome the Asheville Membership Briefcase.  Say goodbye to piles of paper membership cards and hello to your one-stop web application for storing all of your membership information! </p>
+                    <p>Welcome to the Asheville Membership Briefcase.  Say goodbye to piles of paper membership cards and hello to your one-stop web application for storing all of your membership information! </p>
                     <p>Take a look at the participating businesses and create a free account to get started!</p>
                     <div class="row justify-content-center">
                         <a href="businesses">
