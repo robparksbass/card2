@@ -34,10 +34,15 @@ class CardsController extends Controller
             
         return view('cards.add', ['user' => $user, 'businesses' => $businesses]);
     }
-    public function store()
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'issueDate' => 'required',
+        ]);
+
         //set variables for dates
-        $valid_date = Carbon::now();
+        $valid_date = Carbon::parse($request->issueDate);
+       
         $expiration_date = $valid_date->addDays(365);
 
         //set variable for user
@@ -47,7 +52,7 @@ class CardsController extends Controller
         Card::create([
             'business_id' => request('businessSelect'),
             'user_id' => $user->id,
-            'valid_date'=> Carbon::now(),
+            'valid_date'=> request('issueDate'),
             'expiration_date' => $expiration_date
         ]);
 
