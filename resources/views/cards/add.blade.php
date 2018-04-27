@@ -46,10 +46,12 @@
                                             </option>
                                         @endforeach
                                 </select>
-                                <!-- <label for="issueDate">When was your card issued?</label><br>
-                                <input type="text" name="issueDate" placeholder="Please enter the issue date"> -->
-                            </div>
-                                <div class="row justify-content-center">
+                            </div>              
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Issue Date:</label>
+                                <input type="text" class="form-control" name="issueDate" id="datepicker" placeholder="Click to select the Card's Issue Date" required>
+                            </div>          
+                                        <div class="row justify-content-center">
                                     <button type="submit" class="btn btn-success btn-sm mb-2">
                                         <i class="fa fa-plus-square"></i>
                                         Add Card
