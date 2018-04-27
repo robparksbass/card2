@@ -28,6 +28,11 @@
                     </div>
                 @else
                     <div class="col-md-8">
+                        @if (count($businesses) == 0)
+                            <div class="row justify-content-center">
+                                You already have cards for all the participating businesses.  Please check back soon as we partner with more of your favorite private clubs!
+                            </div>
+                        @else
                         <form action="/cards" method="POST">
                             {{ csrf_field() }}
                             <div class="form-group">
@@ -35,11 +40,11 @@
                                     Which business would you like to add a card for?
                                 </label>
                                 <select class="form-control" id="businessSelect" name="businessSelect">
-                                    @foreach ($businesses as $business)
-                                        <option value="{{$business->id}}">
-                                            {{ $business->business_name }}
-                                        </option>
-                                    @endforeach
+                                        @foreach ($businesses as $business)
+                                            <option value="{{$business->id}}">
+                                                {{ $business->business_name }}
+                                            </option>
+                                        @endforeach
                                 </select>
                                 <!-- <label for="issueDate">When was your card issued?</label><br>
                                 <input type="text" name="issueDate" placeholder="Please enter the issue date"> -->
@@ -50,15 +55,16 @@
                                         Add Card
                                     </button>
                                 </div>
-                                <div class="row justify-content-center"> 
-                                    <a href="{{ route('home') }}">
-                                        <button type="button" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-angle-double-left"></i>
-                                            Back to Portal
-                                        </button>
-                                    </a>
-                                </div>     
                         </form>
+                        @endif
+                        <div class="row justify-content-center"> 
+                            <a href="{{ route('home') }}">
+                                <button type="button" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-angle-double-left"></i>
+                                    Back to Portal
+                                </button>
+                            </a>
+                        </div>     
                     </div>        
                 @endguest
             </div>

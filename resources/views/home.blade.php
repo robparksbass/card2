@@ -13,12 +13,24 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        <i class="fa fa-address-card"></i>    
-                        <a href="{{ route('cards') }}">View your cards</a><br>
-                        <i class="fa fa-plus-square"></i>
-                        <a href="{{ route('add') }}">Add a New Card</a><br>
-                        <i class="fa fa-building"></i>
-                        <a href="{{ route('businesses') }}">View participating businesses</a>
+                    <div class="row justify-content-center">
+                        <a href="{{ route('cards') }}" class="btn btn-outline-dark cardButton mb-1">
+                            <i class="fa fa-address-card"></i>    
+                            View your cards
+                        </a>
+                    </div>
+                    <div class="row justify-content-center">
+                        <a href="{{ route('add') }}" class="btn btn-outline-dark cardButton mb-1">
+                            <i class="fa fa-plus-square"></i>    
+                            Add a New Card
+                        </a>
+                    </div>
+                    <div class="row justify-content-center">
+                        <a href="{{ route('businesses') }}" class="btn btn-outline-dark cardButton">
+                            <i class="fa fa-building"></i>
+                            View businesses
+                        </a>
+                    </div>    
                 </div>
             </div>
         </div>

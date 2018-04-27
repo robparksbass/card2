@@ -11,17 +11,18 @@
     },
     "devDependencies": {
         "axios": "^0.18",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^4.1.0",
         "bulma": "^0.6.2",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
-        "lodash": "^4.17.4",
+        "lodash": "^4.17.10",
         "popper.js": "^1.12",
         "vue": "^2.5.7"
     },
     "dependencies": {
         "ajv": "^6.4.0",
-        "font-awesome": "*"
+        "font-awesome": "*",
+        "node-sass": "^4.9.0"
     }
 }

@@ -27,26 +27,22 @@ Route::get('/businesses', 'BusinessesController@index')->name('businesses');
 
 Route::get('/businesses/{business}', 'BusinessesController@show');
 
-Route::get('/cards', 'CardsController@index')->name('cards');
-
-Route::get('/cards/{card}', 'CardsController@show');
-
-Route::get('add', 'CardsController@add')->name('add');
-
-Route::post('/cards', 'CardsController@store');
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
+
+Route::prefix('cards')->middleware('auth')->group(function(){
+    Route::get('/', 'CardsController@index')->name('cards');
+    Route::get('/{card}', 'CardsController@show');
+    Route::get('/cards/add', 'CardsController@add')->name('add');
+    Route::post('/', 'CardsController@store');
+});
 
 Route::prefix('manage')->middleware('role:administrator')->group(function(){
     Route::get('/', 'ManageController@index');
     Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
     Route::resource('/users', 'UserController');
-
     Route::get('/roles', function () {
         return view('manage/users/roles');
     });
-
 });
-

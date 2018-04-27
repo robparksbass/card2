@@ -4,22 +4,25 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Businesses</div>
-
+                <div class="card-header">
+                    Participating Businesses
+                </div>
                 <div class="card-body">
-                View business details for:
-                    <ul>
-                        @foreach ($businesses as $business)
-                            <li>
-                                <a href="/businesses/{{ $business->id }}">
-                                    <button type="button" class="btn btn-outline-dark mb-1">
-                                    <i class="fa fa-building"></i>
-                                        {{ $business->business_name }}
-                                    </button>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                    <div class="row justify-content-center">
+                        <ul>
+                            @foreach ($businesses as $business)
+                                <li>
+                                    <a href="/businesses/{{ $business->id }}">
+                                        <button type="button" class="btn btn-outline-dark mb-1 cardButton">
+                                        <i class="fa fa-building"></i>
+                                            {{ $business->business_name }}
+                                        </button>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    {{ $businesses->links() }}
                 @guest
                     <div class="row justify-content-center"> You must 
                         <a href="{{ route('register') }}">&nbsp;create an account&nbsp;</a>or
