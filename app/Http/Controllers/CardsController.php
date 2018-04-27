@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class CardsController extends Controller
 {
-    public function index()
+    public function index(Card $card)
     {
-        $cards = Card::all();
+        $user = Auth::user();        
+        $cards = Card::where('user_id', $user->id)->orderBy('created_at')->paginate(5);;
         return view('cards.index', compact('cards'));
     }
 

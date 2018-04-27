@@ -12,15 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://google.com/recaptcha/api.js?hl=en"></script>
 </head>
 <body>
-    @role('administrator')
-    @include('includes.nav.manage')
-    @endrole
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-sm navbar-light navbar-laravel flex-wrap">
             <div class="container">
-                
                 @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Asheville Membership Briefcase
@@ -31,30 +28,25 @@
                 </a>
                 @endguest
 
-
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+                    <ul class="navbar-nav mr-auto flex-wrap"></ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
-                        @else
+                        @else                        
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @role('administrator')Administrator:@endrole
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @role('administrator')
                                     <a class="dropdown-item" href="{{ route('manage.dashboard') }}">
@@ -87,7 +79,6 @@
                                         <i class="fa fa-times-circle"></i>
                                         &nbsp;Logout
                                     </a>
-
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

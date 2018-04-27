@@ -13455,6 +13455,7 @@ body {
 
 ul {
   list-style-type: none;
+  padding-left: 0;
 }
 
 .navbar-brand {
@@ -13471,32 +13472,13 @@ ul {
   color: #fff;
 }
 
-.side-menu {
-  position: fixed;
-  height: 100vh;
-  width: 200px;
-  background-color: #2d6ecf;
-  overflow-y: scroll;
-  padding-top: 75px;
-  color: #fff;
+.cardButton {
+  width: 220px !important;
 }
 
-.side-menu a {
-  color: #fff;
-}
-
-.side-menu aside ul {
-  list-style: none;
-}
-
-.management-area {
-  position: absolute;
-  top: 8rem;
-  left: 200px;
-  right: 0;
-}
-
-.flex-container {
-  margin: 10px 25px;
+@media screen and (max-width: 515px) {
+  .dropdown-menu {
+    width: 350px !important;
+  }
 }
 

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Session;
+use Hash;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -40,32 +43,16 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|unique:users'
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed'
         ]);
-
-        $password = trim($request->password);
-
-
-
-        // if (Request::has('password') && !empty($request->password)) {
-        //     $password = trim($request->password);
-        // } else {
-        //     $length = 10;
-        //     $keyspace = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ';
-        //     $str = '';
-        //     $max = mb_strlen($keyspace, '8bit') -1;
-        //     for ($i=0; $i < $length; ++$i) {
-        //         $str .= $keyspace[random_int(0, $max)];
-        //     }
-        //     $password = $str;
-        // }
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = \Hash::make($password);
-        $user->save();
+        $user->password = Hash::make(trim($request->password));
+        // $user->save();
 
         if($user->save()) {
             return redirect()->route('users.show', $user->id);
@@ -108,7 +95,25 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request);
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',  Rule::unique('users')->ignore($id),
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        if($user->save()) {
+            return redirect()->route('users.show', $id);
+        } else {
+            Session::flash('error', 'There was a problem saving the updated user info. Please try again.');
+            return redirect()->route('users.edit', $id);
+        }
+        
+
+
+
     }
 
     /**

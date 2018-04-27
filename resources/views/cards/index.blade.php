@@ -10,28 +10,27 @@
                     Create an account or login to access the full features.<br>
                     <a href="/">Back to Home</a>
                 @else
-                    <ul>
-                        @foreach ($cards as $card)
-                            @if ( $card->user_id == Auth::user()->id )
+                    <div class="row justify-content-center">
+                        <ul>
+                            @foreach ($cards as $card)                               
                                 <li>
                                     <a href="/cards/{{ $card->id }}"> 
-                                        <button type="button" class="btn btn-outline-dark mb-1 fixedWidth">
+                                        <button type="button" class="btn btn-outline-dark mb-1 cardButton">
                                             <i class="fa fa-address-card"></i>    
                                             {{ $card->business->business_name }}
                                         </button>
                                     </a>
-                                </li>                        
-                            @endif
-                        @endforeach
-                        @if ($card->user_id != Auth::user()->id)
-                            <div class="row justify-content-center">
+                                </li>                                                      
+                            @endforeach
+                        </ul>
+                        @if (count($cards) == 0)
                                 You don't currently have any membership cards.  Add a new card!
-                            </div>
                         @endif
-                    </ul>
+                    </div>                 
+                    {{ $cards->links() }}                    
                     <div class="row justify-content-center">
                         <a href="{{ route('add') }}">
-                            <button type="button" class="btn btn-success btn-sm mb-1">
+                            <button type="button" class="btn btn-success btn-sm mt-3 mb-1">
                                 <i class="fa fa-plus-square"></i>
                                 Add a New Card
                             </button>

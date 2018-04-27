@@ -22,8 +22,7 @@ class CreateBusinessesTable extends Migration
             $table->string('zip_code', 5);
             $table->string('phone', 12);
             $table->string('website_url');
-            $table->string('img_front');
-            $table->string('img_back');
+            $table->string('google_maps_url');
             $table->timestamps();
         });
     }
