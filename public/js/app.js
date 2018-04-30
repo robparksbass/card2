@@ -13924,43 +13924,9 @@ window.Vue = __webpack_require__(37);
  */
 
 Vue.component('example-component', __webpack_require__(40));
-// Vue.component('search', require('./components/Search.vue'));
-
 
 var app = new Vue({
-    el: '#app'
-});
-
-new Vue({
-    el: '#app',
-    data: {
-        users: [],
-        loading: false,
-        error: false,
-        query: ''
-    },
-    methods: {
-        search: function search() {
-            var _this = this;
-
-            // Clear the error message.
-            this.error = '';
-            // Empty the products array so we can fill it with the new products.
-            this.users = [];
-            // Set the loading property to true, this will display the "Searching..." button.
-            this.loading = true;
-
-            // Making a get request to our API and passing the query to it.
-            this.$http.get('/api/search?q=' + this.query).then(function (response) {
-                // If there was an error set the error message, if not fill the products array.
-                response.body.error ? _this.error = response.body.error : _this.products = response.body;
-                // The request is finished, change the loading to false again.
-                _this.loading = false;
-                // Clear the query.
-                _this.query = '';
-            });
-        }
-    }
+  el: '#app'
 });
 
 
@@ -13969,9 +13935,9 @@ window.$ = window.jQuery = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a;
 
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#datepicker').datepicker({
-    dateFormat: "yy-mm-dd",
-    minDate: -364,
-    maxDate: 0
+  dateFormat: "yy-mm-dd",
+  minDate: -364,
+  maxDate: 0
 });
 
 /***/ }),

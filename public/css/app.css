@@ -15005,6 +15005,10 @@ ul {
   width: 220px;
 }
 
+.card:first-of-type {
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 515px) {
   .dropdown-menu {
     width: 350px !important;

@@ -48,34 +48,9 @@ ul {
   width: 220px;
 }
 
-// .topButton {
-//   border-color: #000;
-//   border-radius: 5px 5px 0 0;
-// }
-
-// .middleButton {
-//   border-color: #000;
-//   border-radius: 0;
-//   border-top: none;
-//   margin-bottom: 0;
-// }
-
-// .bottomButton {
-//   border-color: #000;
-//   border-radius: 0;
-//   border-top: none;
-//   border-bottom: none;
-//   margin-bottom: -20px;
-// }
-
-// .navButton {
-//   width: 150px;
-// }
-
-// // .card height
-// .card:not(.littleCard) {
-//   height: 430px;
-// }
+.card:first-of-type {
+  margin-top: 10px;
+}
 
 // fix nav bar for responsivity
 @media screen and (max-width: 515px) {
@@ -83,5 +58,3 @@ ul {
     width:350px !important;
   }
 }
-
-

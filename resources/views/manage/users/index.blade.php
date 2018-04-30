@@ -6,22 +6,20 @@
             <div class="card littleCard">
                 <div class="card-header">Users</div>
                 <div class="card-body"> 
-                    <div class="row justify-content-center">
-                    
-                    
-                    
-<search></search>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    <div class="row justify-content-center mb-2">
+                        <div class="card">
+                        <form action="/search" method="POST" role="search">
+                            {{ csrf_field() }}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="q"
+                                    placeholder="Search users"> <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>   
+                        </div>
                     </div>
                     <div class="table-responsive row">
                         <table class="table table-hover">
@@ -56,7 +54,7 @@
                         </a>
                     </div>
                     <div class="row justify-content-center">
-                            <a href="{{ route('manage.dashboard') }}" class="btn btn-primary btn-sm mt-1">
+                            <a href="{{ route('manage.dashboard') }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-angle-double-left"></i>
                                 Back to Admin Dashboard
                             </a>

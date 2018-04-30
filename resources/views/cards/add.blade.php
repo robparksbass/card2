@@ -9,7 +9,6 @@
             </div>
             <div class="card-body row justify-content-center">
                 @guest
-                
                     You must be logged in to access this feature.
             </div>
                     <div class="row justify-content-center">
@@ -51,8 +50,8 @@
                                 <label for="exampleFormControlInput1">Issue Date:</label>
                                 <input type="text" class="form-control" name="issueDate" id="datepicker" placeholder="Click to select the Card's Issue Date" required>
                             </div>          
-                                        <div class="row justify-content-center">
-                                    <button type="submit" class="btn btn-success btn-sm mb-2">
+                                <div class="row justify-content-center">
+                                    <button type="submit" class="btn btn-success mb-2">
                                         <i class="fa fa-plus-square"></i>
                                         Add Card
                                     </button>

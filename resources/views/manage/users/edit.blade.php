@@ -22,9 +22,18 @@
                             </div>
                         </div>                    
                         <div class="row justify-content-center">
-                            <button class="btn btn-success btn-sm">Edit User</button>
+                            <button class="btn btn-success btn-sm">
+                                <i class="fa fa-edit"></i>
+                                Edit User
+                            </button>
                         </div>
                     </form>
+                    <div class="row justify-content-center">
+                        <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm mt-1">
+                            <i class="fa fa-angle-double-left"></i>
+                            Back to Users
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

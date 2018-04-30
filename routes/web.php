@@ -11,6 +11,10 @@
 |
 */
 
+
+Use Illuminate\Support\Facades\Input;
+Use App\User;
+
 Route::get('/', function () {
     return view('index');
 });
@@ -45,8 +49,16 @@ Route::prefix('manage')->middleware('role:administrator')->group(function(){
     Route::get('/roles', function () {
         return view('manage/users/roles');
     });
-    Route::get('/search', [
-        'as' => 'api.search',
-        'uses' => 'Api\SearchController@search'
-    ]);
+    // Route::get('/search', [
+    //     'as' => 'api.search',
+    //     'uses' => 'Api\SearchController@search'
+    // ]);
 });
+
+Route::any('/search',function(){
+    $q = Input::get ( 'q' );
+    $user = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+    if(count($user) > 0)
+    return view('search')->withDetails($user)->withQuery ( $q );
+    else return view ('search')->withMessage('No Details found. Try to search again !');
+    });

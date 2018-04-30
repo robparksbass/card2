@@ -17,8 +17,7 @@ class CreateCardsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('business_id');
             $table->foreign('business_id')->references('id')->on('businesses');            
-            $table->unsignedInteger('user_id');
-            // $table->foreign('user_id')->references('id')->on('users');                        
+            $table->unsignedInteger('user_id');                  
             $table->date('valid_date');
             $table->date('expiration_date');
             $table->timestamps();
