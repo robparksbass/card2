@@ -148,6 +148,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+
 
         /*
          * Package Service Providers...

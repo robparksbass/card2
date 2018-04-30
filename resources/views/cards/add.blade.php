@@ -29,7 +29,7 @@
                 @else
                     <div class="col-md-8">
                         @if (count($businesses) == 0)
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center mb-3">
                                 You already have cards for all the participating businesses.  Please check back soon as we partner with more of your favorite private clubs!
                             </div>
                         @else
@@ -46,10 +46,12 @@
                                             </option>
                                         @endforeach
                                 </select>
-                                <!-- <label for="issueDate">When was your card issued?</label><br>
-                                <input type="text" name="issueDate" placeholder="Please enter the issue date"> -->
-                            </div>
-                                <div class="row justify-content-center">
+                            </div>              
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Issue Date:</label>
+                                <input type="text" class="form-control" name="issueDate" id="datepicker" placeholder="Click to select the Card's Issue Date" required>
+                            </div>          
+                                        <div class="row justify-content-center">
                                     <button type="submit" class="btn btn-success btn-sm mb-2">
                                         <i class="fa fa-plus-square"></i>
                                         Add Card
@@ -58,11 +60,15 @@
                         </form>
                         @endif
                         <div class="row justify-content-center"> 
-                            <a href="{{ route('home') }}">
-                                <button type="button" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-angle-double-left"></i>
-                                    Back to Portal
-                                </button>
+                            <a href="{{ route('cards') }}" class="btn btn-primary btn mt-2 mb-1 topButton">                                
+                                <i class="fa fa-angle-double-left"></i>
+                                Back to Cards
+                            </a>
+                        </div>     
+                        <div class="row justify-content-center"> 
+                            <a href="{{ route('home') }}" class="btn btn-primary btn bottomButton">                                
+                                <i class="fa fa-angle-double-left"></i>
+                                Back to Portal
                             </a>
                         </div>     
                     </div>        

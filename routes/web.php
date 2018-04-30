@@ -45,4 +45,8 @@ Route::prefix('manage')->middleware('role:administrator')->group(function(){
     Route::get('/roles', function () {
         return view('manage/users/roles');
     });
+    Route::get('/search', [
+        'as' => 'api.search',
+        'uses' => 'Api\SearchController@search'
+    ]);
 });

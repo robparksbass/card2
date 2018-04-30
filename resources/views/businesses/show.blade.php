@@ -8,7 +8,7 @@
                 <div class="card-header">Business Details</div>
                 <div class="card-body">
                     <div class="row justify-content-center">
-                        <div class="card">
+                        <div class="card littleCard">
                             <div class="card-body businessCard">
                                 <p>
                                     <strong>{{ $business->business_name }}</strong><br>
