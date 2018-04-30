@@ -15002,7 +15002,7 @@ ul {
 }
 
 .cardButton {
-  width: 220px !important;
+  width: 220px;
 }
 
 @media screen and (max-width: 515px) {

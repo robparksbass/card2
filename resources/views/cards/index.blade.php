@@ -29,19 +29,15 @@
                     </div>                 
                     {{ $cards->links() }}                    
                     <div class="row justify-content-center">
-                        <a href="{{ route('add') }}">
-                            <button type="button" class="btn btn-success btn-sm mt-3 mb-1">
+                        <a href="{{ route('add') }}" class="btn btn-primary mt-3 mb-1 ">
                                 <i class="fa fa-plus-square"></i>
                                 Add a New Card
-                            </button>
                         </a>
-                    </div>    
+                    </div>
                     <div class="row justify-content-center">
-                        <a href="{{ route('home') }}">
-                            <button type="button" class="btn btn-primary btn-sm">
+                        <a href="{{ route('home') }}" class="btn btn-primary">
                                 <i class="fa fa-angle-double-left"></i>
                                 Back to Portal
-                            </button>
                         </a>
                     </div>    
                 @endguest

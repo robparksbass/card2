@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <div class="card">
+                            <div class="card littleCard">
                                 <div class="card-body">
                                     <div class="row justify-content-start mb-2">
                                         <strong>{{ Auth::user()->name }}</strong>&nbsp; is a member of &nbsp; <strong>{{ $card->business->business_name }}</strong>.<br>

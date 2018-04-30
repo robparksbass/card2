@@ -13,13 +13,19 @@
                         <strong class="ml-3">Email:</strong>&nbsp;{{ $user->email }}
                     </div>
                     <div class="row justify-content-center">
-                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success btn-sm mt-3">
+                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success btn-sm mt-3 cardButton">
                             <i class="fa fa-edit"></i>
                             Edit User
                         </a>
                     </div>
                     <div class="row justify-content-center">
-                        <a href="{{ route('manage.dashboard') }}" class="btn btn-primary btn-sm mt-1">
+                        <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm mt-1 cardButton">
+                            <i class="fa fa-edit"></i>
+                            Back to Users
+                        </a>
+                    </div>
+                    <div class="row justify-content-center">
+                        <a href="{{ route('manage.dashboard') }}" class="btn btn-primary btn-sm mt-1 cardButton">
                             <i class="fa fa-angle-double-left"></i>
                             Back to Admin Dashboard
                         </a>
