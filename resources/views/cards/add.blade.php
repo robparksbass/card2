@@ -60,13 +60,13 @@
                         </form>
                         @endif
                         <div class="row justify-content-center"> 
-                            <a href="{{ route('cards') }}" class="btn btn-primary btn mt-2 mb-1 topButton">                                
+                            <a href="{{ route('cards') }}" class="btn btn-primary btn-sm tn mt-2 mb-1 topButton">                                
                                 <i class="fa fa-angle-double-left"></i>
                                 Back to Cards
                             </a>
                         </div>     
                         <div class="row justify-content-center"> 
-                            <a href="{{ route('home') }}" class="btn btn-primary btn bottomButton">                                
+                            <a href="{{ route('home') }}" class="btn btn-primary btn-sm bottomButton">                                
                                 <i class="fa fa-angle-double-left"></i>
                                 Back to Portal
                             </a>

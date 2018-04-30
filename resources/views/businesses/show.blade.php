@@ -35,7 +35,7 @@
                     </div>
                     <div class="row justify-content-center">
                         <a href="/businesses">
-                            <button type="button" class="btn btn-success btn-sm mt-2">
+                            <button type="button" class="btn btn-primary btn-sm mt-2">
                                 <i class="fa fa-angle-double-left"></i>    
                                 Back to Businesses
                             </button>
@@ -58,7 +58,7 @@
                     @else
                     <div class="row justify-content-center">
                         <a href="{{ route('home') }}">
-                            <button type="button" class="btn btn-primary btn-sm mt-2">
+                            <button type="button" class="btn btn-primary btn-sm mt-1">
                                 <i class="fa fa-angle-double-left"></i>
                                 Back to Portal
                             </button>

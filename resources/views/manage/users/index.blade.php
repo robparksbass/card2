@@ -50,13 +50,13 @@
 
                     </div>
                     <div class="row justify-content-center">
-                        <a href="{{ route('users.create') }}" class="btn btn-success btn-sm cardButton mb-1">
+                        <a href="{{ route('users.create') }}" class="btn btn-success btn-sm mb-1">
                             <i class="fa fa-plus-square"></i>
                             &nbsp;Create New User
                         </a>
                     </div>
                     <div class="row justify-content-center">
-                            <a href="{{ route('manage.dashboard') }}" class="btn btn-primary btn-sm mt-1 cardButton">
+                            <a href="{{ route('manage.dashboard') }}" class="btn btn-primary btn-sm mt-1">
                                 <i class="fa fa-angle-double-left"></i>
                                 Back to Admin Dashboard
                             </a>
