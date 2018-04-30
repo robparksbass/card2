@@ -29,13 +29,13 @@
                     </div>                 
                     {{ $cards->links() }}                    
                     <div class="row justify-content-center">
-                        <a href="{{ route('add') }}" class="btn btn-primary mt-3 mb-1 ">
+                        <a href="{{ route('add') }}" class="btn btn-success btn-sm mt-3 mb-1">
                                 <i class="fa fa-plus-square"></i>
                                 Add a New Card
                         </a>
                     </div>
                     <div class="row justify-content-center">
-                        <a href="{{ route('home') }}" class="btn btn-primary">
+                        <a href="{{ route('home') }}" class="btn btn-sm btn-primary">
                                 <i class="fa fa-angle-double-left"></i>
                                 Back to Portal
                         </a>
