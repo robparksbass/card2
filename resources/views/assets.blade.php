@@ -10,8 +10,7 @@
                 <div class="card-body">
                     <ul>
                         <li><a href="{{ URL::to('assets1/capstone.sql') }}">SQL Dump</a></li>
-                        <li><a href="#">ERD</a></li>
-                        <li><a href="#">Style Guide</a></li>
+                        <li><a href="{{ URL::to('assets1/erd.png') }}" target="_blank">ERD</a></li>
                     </ul>
                 </div>
             </div>
