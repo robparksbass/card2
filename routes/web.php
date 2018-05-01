@@ -19,7 +19,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-
 Route::get('/assets', function () {
     return view('assets');
 });
@@ -27,7 +26,6 @@ Route::get('/assets', function () {
 Route::get('/assets/style-guide', function () {
     return view('assets/style-guide');
 });
-
 
 Route::get('/businesses', 'BusinessesController@index')->name('businesses');
 
@@ -51,10 +49,6 @@ Route::prefix('manage')->middleware('role:administrator')->group(function(){
     Route::get('/roles', function () {
         return view('manage/users/roles');
     });
-    // Route::get('/search', [
-    //     'as' => 'api.search',
-    //     'uses' => 'Api\SearchController@search'
-    // ]);
 });
 
 Route::any('/search',function(){
@@ -63,4 +57,4 @@ Route::any('/search',function(){
     if(count($user) > 0)
     return view('search')->withDetails($user)->withQuery ( $q );
     else return view ('search')->withMessage('No Details found. Try to search again !');
-    });
+    })->middleware('auth');
