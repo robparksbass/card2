@@ -28,18 +28,6 @@
                             </button>
                         </div>
                     </form>
-
-@if ($errors->any())
-@dd($errors);
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
                     <div class="row justify-content-center">
                         <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm mt-1">
                             <i class="fa fa-angle-double-left"></i>
