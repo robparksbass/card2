@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Session;
 use Hash;
-// use Illuminate\Validation\Rule;
-// use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\Validator;
-// use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\Validation\Rule;
+
 
 class UserController extends Controller
 {
