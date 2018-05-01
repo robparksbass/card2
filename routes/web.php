@@ -57,4 +57,4 @@ Route::any('/search',function(){
     if(count($user) > 0)
     return view('search')->withDetails($user)->withQuery ( $q );
     else return view ('search')->withMessage('No Details found. Try to search again !');
-    })->middleware('auth');
+    })->middleware('role:administrator');

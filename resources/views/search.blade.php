@@ -10,24 +10,26 @@
                         @if(isset($details))
                             <p> The Search results for your query <b> {{ $query }} </b> are :</p>
                         <h2>Sample User details</h2>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($details as $user)
-                                <tr>
-                                    <td>{{$user->name}}</td>
-                                    <td>{{$user->email}}</td>
-                                    <td><a class="btn btn-primary btn-sm" href="{{ route('users.edit', $user->id) }}">Edit</a></td>
+                        <div class="row table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Actions</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach($details as $user)
+                                    <tr>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td><a class="btn btn-primary btn-sm" href="{{ route('users.edit', $user->id) }}">Edit</a></td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                         @else
                         Sorry, but no results were found.
                         @endif
