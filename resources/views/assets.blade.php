@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="{{ URL::to('assets1/capstone.sql') }}">SQL Dump</a></li>
+                        <li><a href="{{ URL::to('assets1/database-final.sql') }}">SQL Dump</a></li>
                         <li><a href="{{ URL::to('assets1/erd.png') }}" target="_blank">ERD</a></li>
                     </ul>
                 </div>
