@@ -29,9 +29,6 @@
                                 </a>
                             </div>
                         </div>
-                        
-
-                        
                     </div>
                     <div class="row justify-content-center">
                         <a href="/businesses">
