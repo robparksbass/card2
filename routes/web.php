@@ -19,13 +19,15 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/about', function () {
-    return view('about');
+
+Route::get('/assets', function () {
+    return view('assets');
 });
 
-Route::get('/formAction', function () {
-    return view('formAction');
+Route::get('/assets/style-guide', function () {
+    return view('assets/style-guide');
 });
+
 
 Route::get('/businesses', 'BusinessesController@index')->name('businesses');
 
