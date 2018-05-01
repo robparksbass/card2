@@ -7,9 +7,14 @@ use App\User;
 use Session;
 use Hash;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
+
 
 class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -47,12 +52,10 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed'
         ]);
-
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make(trim($request->password));
-        // $user->save();
 
         if($user->save()) {
             return redirect()->route('users.show', $user->id);
@@ -95,25 +98,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = User::findOrFail($id);
+
         $this->validate($request, [
             'name' => 'required|string|max:255',
-            'email' => 'required|email',  Rule::unique('users')->ignore($id),
+            'email' => 'required|email|max:255|unique:users',  
+            'email' => Rule::unique('users')->ignore($user->id),
         ]);
-
-        $user = User::findOrFail($id);
+     
         $user->name = $request->name;
         $user->email = $request->email;
+        $saved = $user->save();
 
         if($user->save()) {
             return redirect()->route('users.show', $id);
-        } else {
-            Session::flash('error', 'There was a problem saving the updated user info. Please try again.');
-            return redirect()->route('users.edit', $id);
         }
-        
-
-
-
     }
 
     /**

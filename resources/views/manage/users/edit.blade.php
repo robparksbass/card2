@@ -12,15 +12,15 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
                             <div class="col-md-6">
-                                <input type="text" class="input" name="name" id="name" value="{{ $user->name }}">
+                                <input type="text" class="input" name="name" id="name" value="{{ $user->name }}" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
                             <div class="col-md-6">
-                                <input type="text" class="input" name="email" id="email" value="{{ $user->email }}">
+                                <input type="text" class="input" name="email" id="email" value="{{ $user->email }}" required>
                             </div>
-                        </div>                    
+                        </div>
                         <div class="row justify-content-center">
                             <button class="btn btn-success btn-sm">
                                 <i class="fa fa-edit"></i>
@@ -28,6 +28,18 @@
                             </button>
                         </div>
                     </form>
+
+@if ($errors->any())
+@dd($errors);
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
                     <div class="row justify-content-center">
                         <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm mt-1">
                             <i class="fa fa-angle-double-left"></i>

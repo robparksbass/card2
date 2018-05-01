@@ -23,10 +23,6 @@ Route::get('/assets', function () {
     return view('assets');
 });
 
-Route::get('/assets/style-guide', function () {
-    return view('assets/style-guide');
-});
-
 Route::get('/businesses', 'BusinessesController@index')->name('businesses');
 
 Route::get('/businesses/{business}', 'BusinessesController@show');

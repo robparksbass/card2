@@ -37,7 +37,8 @@ class CardsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'issueDate' => 'required',
+            'issueDate' => 'required|date',
+            'businessSelect' => 'required'
         ]);
 
         //set variables for dates
